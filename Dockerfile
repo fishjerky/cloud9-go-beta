@@ -10,8 +10,12 @@ RUN echo "export PATH=\"/usr/local/go/bin:/go/bin:$PATH\"" >> /root/.bashrc
 
 #############################
 # Cloud9 IDE
-# default port is 8181, we use 8080
 EXPOSE 8080
+
+#############################
+# Web apps may use these ports
+EXPOSE 8081
+EXPOSE 8082
 
 # add in some nice Cloud9 default settings
 COPY user.settings /root/.c9/
@@ -19,7 +23,7 @@ COPY .c9 /go/.c9
 
 # install cloud9 last to make updates smaller
 RUN git clone git://github.com/c9/core.git c9sdk
-RUN cd c9sdk; ./scripts/install-sdk.sh; ln -s /c9sdk/bin/c9 /usr/bin/c9
+RUN cd c9sdk; ./scripts/install-sdk.sh; ln -s /c9sdk/bin/c9 /usr/bin/c9; ln -s /root/.c9/node/bin/node /usr/bin/node
 
 # start cloud9 with no authentication by default
 # if authentication is desired, set the value of -a, i.e. -a user:pass at docker run
