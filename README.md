@@ -1,6 +1,6 @@
 # Cloud9 Docker Image for go Development using latest go beta
 
-Includes go 1.8rc2 running on Debian Jessie with working code completion and debugging.
+Includes go 1.8rc3 running on Debian Jessie with working code completion and debugging.
 
 ## Run the container with defaults
 
