@@ -2,7 +2,7 @@ FROM buildpack-deps:jessie
 
 #############################
 # Go
-ENV GO_VERSION 1.8rc2
+ENV GO_VERSION 1.8rc3
 ADD go$GO_VERSION.linux-amd64.tar.gz /usr/local
 RUN mkdir -p /go/bin /go/pkg /go/src
 ENV GOPATH /go
