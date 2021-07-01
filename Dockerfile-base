@@ -1,0 +1,10 @@
+FROM centos:7
+
+#############################
+# Build base image
+#
+#
+RUN yum install -y wget zip unzip gcc git which
+RUN yum groupinstall -y development #for cloud9
+RUN yum install -y glibc-static #for cloud9
+
