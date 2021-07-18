@@ -7,7 +7,7 @@ Command:  curl wget zip unzip gcc git which vim
 ## Run the container with defaults
 
 ```
-docker run -d -p 8080:8080 fishjerky/cloud9-go-beta
+docker run -d -p 8080:8080 fishjerky/c9-go
 ```
 
 ## Options
@@ -15,14 +15,14 @@ docker run -d -p 8080:8080 fishjerky/cloud9-go-beta
 ### PNAT the port and modify the mounted go directory
 
 ```
-docker run -d -v ~/my_go_workspace:/go -p 8888:8080 fishjerky/cloud9-go-beta
+docker run -d -v ~/my_go_workspace:/go -p 8888:8080 fishjerky/c9-go
 ```
 
 
 ### Add basic authentication
 
 ```
-docker run -d -v ~:/go -p 8080:8080 fishjerky/cloud9-go-beta -a user:pass
+docker run -d -v ~:/go -p 8080:8080 fishjerky/c9-go -a user:pass
 ```
 
 Note: the password will be easily visible to anyone in the docker group, so no valuable passwords!
