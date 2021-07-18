@@ -2,9 +2,10 @@ FROM centos:7
 
 #############################
 # Build base image
-#
-#
-RUN yum install -y wget zip unzip gcc git which
+# required command
+RUN yum install -y zip unzip ps netstat ps
+# for development
+RUN yum install -y curl wget gcc git vim diff
 RUN yum groupinstall -y development #for cloud9
-RUN yum install -y glibc-static #for cloud9
+RUN yum install -y glibc-static which #for cloud9
 
